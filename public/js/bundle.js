@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -78,19 +78,23 @@
 //----------Module imports ------------
 
 var cal = __webpack_require__(1);
-var cats = __webpack_require__(2);
+var cats = __webpack_require__(3);
+var handleGoogleLogin = __webpack_require__(2);
+
 
 //-------------------------------------
 
 
 if (annyang) {
   // define the functions our commands will run.
+  //
+  var showCats = cats.showCats;
+  var showCal = cal.showCal;
+  var login = handleGoogleLogin.signIn;
+
   var hello = function() {
       console.log("hello!");
   };
-
-  var showCats = cats.showCats;
-  var showCal = cal.showCal;
 
   var showFlickr = function(tag) {
     $('#flickrGallery').show();
@@ -190,6 +194,12 @@ module.exports = {
 /* 2 */
 /***/ (function(module, exports) {
 
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
 var cats = ['dave', 'henry', 'mark'];
 
 module.exports = {
@@ -200,7 +210,7 @@ module.exports = {
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(0);

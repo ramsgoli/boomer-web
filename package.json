@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo \"Building\" && cp -r src/css public && cp -r src/assets public && cp src/index.html public && webpack -w"
+    "build": "echo \"Building\" && cp -r src/css public && cp -r src/assets public && cp -r src/views public && webpack -w"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,8 @@
   "dependencies": {
     "ejs": "^2.5.5",
     "express": "^4.14.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "^1.0.0",
     "webpack": "^2.2.1"
   }
 }
