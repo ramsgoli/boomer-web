@@ -80,7 +80,6 @@
 var cal = __webpack_require__(1);
 var cats = __webpack_require__(2);
 
-
 //-------------------------------------
 
 
@@ -133,7 +132,7 @@ if (annyang) {
   //   You can pass a function, a function name (as a string), or write your function as part of the commands object.
   var commands = {
     'hello (there)':        hello,
-    'show me calendar':     showCal,
+    'show me :month':     showCal,
     'show me cats':         showCats,
     'show :type report':    showTPS,
     'let\'s get started':   getStarted
@@ -165,24 +164,24 @@ var scrollTo = function(identifier, speed) {
 /* 1 */
 /***/ (function(module, exports) {
 
-var months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec"
-];
+var months = {
+	"January": 1,
+	"February": 2,
+	"March": 3,
+	"April": 4,
+	"May": 5,
+	"June": 6,
+	"July": 7,
+	"August": 8,
+	"September": 9,
+	"October": 10,
+	"November": 11,
+	"December": 12
+};
 
 module.exports = {
-    showCal: function() {
-        console.log(months);
+    showCal: function(month) {
+		console.log(months[month]);
     }
 };
 
