@@ -1,25 +1,20 @@
-getCalendarEvents = function(num) {
-
-    if (num < 0 || num > 12) {
-        return "Invalid param";
-    }
-    var months = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec"
-    ];
-    return months[num-1];
-}
+var months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+];
 
 module.exports = {
-    getCalendarEvents
-}
+    showCal: function() {
+        console.log(months);
+    }
+};

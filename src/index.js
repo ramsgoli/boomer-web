@@ -5,7 +5,8 @@
 //----------Module imports ------------
 
 var cal = require('./modules/calendar.js');
-var getCal = cal.getCalendarEvents;
+var cats = require('./modules/test.js');
+
 
 //-------------------------------------
 
@@ -15,6 +16,10 @@ if (annyang) {
   var hello = function() {
       console.log("hello!");
   };
+
+  var showCats = cats.showCats;
+  var showCal = cal.showCal;
+
   var showFlickr = function(tag) {
     $('#flickrGallery').show();
     $('#flickrLoader p').text('Searching for '+tag).fadeIn('fast');
@@ -55,7 +60,8 @@ if (annyang) {
   //   You can pass a function, a function name (as a string), or write your function as part of the commands object.
   var commands = {
     'hello (there)':        hello,
-    'show me calendar':     getCal,
+    'show me calendar':     showCal,
+    'show me cats':         showCats,
     'show :type report':    showTPS,
     'let\'s get started':   getStarted
 

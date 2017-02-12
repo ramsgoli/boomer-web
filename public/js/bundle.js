@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -78,7 +78,8 @@
 //----------Module imports ------------
 
 var cal = __webpack_require__(1);
-var getCal = cal.getCalendarEvents;
+var cats = __webpack_require__(2);
+
 
 //-------------------------------------
 
@@ -88,6 +89,10 @@ if (annyang) {
   var hello = function() {
       console.log("hello!");
   };
+
+  var showCats = cats.showCats;
+  var showCal = cal.showCal;
+
   var showFlickr = function(tag) {
     $('#flickrGallery').show();
     $('#flickrLoader p').text('Searching for '+tag).fadeIn('fast');
@@ -128,7 +133,8 @@ if (annyang) {
   //   You can pass a function, a function name (as a string), or write your function as part of the commands object.
   var commands = {
     'hello (there)':        hello,
-    'show me calendar':     getCal,
+    'show me calendar':     showCal,
+    'show me cats':         showCats,
     'show :type report':    showTPS,
     'let\'s get started':   getStarted
 
@@ -159,35 +165,43 @@ var scrollTo = function(identifier, speed) {
 /* 1 */
 /***/ (function(module, exports) {
 
-getCalendarEvents = function(num) {
-
-    if (num < 0 || num > 12) {
-        return "Invalid param";
-    }
-    var months = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec"
-    ];
-    return months[num-1];
-}
+var months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+];
 
 module.exports = {
-    getCalendarEvents
-}
+    showCal: function() {
+        console.log(months);
+    }
+};
 
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports) {
+
+var cats = ['dave', 'henry', 'mark'];
+
+module.exports = {
+    showCats: function() {
+        console.log(cats);
+    }
+};
+
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(0);
