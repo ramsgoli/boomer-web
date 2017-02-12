@@ -60,7 +60,7 @@ if (annyang) {
   //   You can pass a function, a function name (as a string), or write your function as part of the commands object.
   var commands = {
     'hello (there)':        hello,
-    'show me calendar':     showCal,
+    'show me :month':     showCal,
     'show me cats':         showCats,
     'show :type report':    showTPS,
     'let\'s get started':   getStarted
