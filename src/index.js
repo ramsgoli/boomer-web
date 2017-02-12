@@ -6,6 +6,7 @@
 
 var cal = require('./modules/calendar.js');
 var cats = require('./modules/test.js');
+var handleGoogleLogin = require('./modules/handleGoogleLogin');
 
 
 //-------------------------------------
@@ -13,12 +14,14 @@ var cats = require('./modules/test.js');
 
 if (annyang) {
   // define the functions our commands will run.
+  //
+  var showCats = cats.showCats;
+  var showCal = cal.showCal;
+  var login = handleGoogleLogin.signIn;
+
   var hello = function() {
       console.log("hello!");
   };
-
-  var showCats = cats.showCats;
-  var showCal = cal.showCal;
 
   var showFlickr = function(tag) {
     $('#flickrGallery').show();
