@@ -6,7 +6,7 @@ app.set('view engine', 'ejs');
 app.set('port', process.env.PORT || 8000);
 
 app.get('/', function(req, res) {
-    res.render('login');
+    res.render('test');
 });
 
 app.get('/home', function(res, res) {
